@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>❤️</title>
+    <title>HSC 2026 Wishes</title>
     
     <!-- মেসেঞ্জারে শেয়ার করার জন্য ব্ল্যাঙ্ক ও ক্লিন মেটা ট্যাগ -->
     <meta property="og:title" content="❤️">
@@ -74,8 +74,8 @@
 
         /* বাউবি লোগো */
         .bou-logo {
-            width: 75px;
-            height: 75px;
+            width: 70px;
+            height: 70px;
             margin-bottom: 12px;
             filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
         }
@@ -83,7 +83,7 @@
         /* আপনার টেক্সটের আকর্ষণীয় স্টাইল */
         .header-container h1 {
             color: #c9184a;
-            font-size: 22px;
+            font-size: 20px;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.06);
             line-height: 1.5;
             font-weight: bold;
@@ -91,9 +91,10 @@
 
         .header-container p {
             color: #056162;
-            font-size: 18px;
-            margin-top: 6px;
+            font-size: 16px;
+            margin-top: 8px;
             font-weight: bold;
+            max-width: 500px;
         }
 
         @keyframes dropDown {
@@ -103,8 +104,8 @@
         /* বিশাল ও ফুল-স্ক্রিন ছড়ানো গাছ কন্টেইনার */
         .tree-wrapper {
             width: 100%;
-            max-width: 600px; /* আরও বড় করা হলো */
-            height: 80vh;    /* স্ক্রিনের প্রায় পুরোটা জুড়ে থাকবে */
+            max-width: 600px; 
+            height: 75vh;    
             display: flex;
             justify-content: center;
             align-items: flex-end;
@@ -119,7 +120,7 @@
 
         /* ডালপালার নিখুঁত ড্রইং ও থ্রিডি উইন্ড অ্যানিমেশন */
         .branch {
-            stroke: #231309;
+            stroke: #2c1a0c;
             stroke-linecap: round;
             fill: none;
             stroke-dasharray: 2000;
@@ -143,16 +144,16 @@
         /* বাতাসে গাছের চমৎকার জীবন্ত দুলুনি */
         @keyframes swayTree {
             0% { transform: rotate(0deg) skewX(0deg); }
-            50% { transform: rotate(2deg) skewX(1deg); }
-            100% { transform: rotate(-2deg) skewX(-1deg); }
+            50% { transform: rotate(1.5deg) skewX(0.5deg); }
+            100% { transform: rotate(-1.5deg) skewX(-0.5deg); }
         }
 
-        /* লাভ পাতাগুলোর পপ-আপ ও মৃদু কাঁপার অ্যানিমেশন */
-        .heart-leaf {
+        /* রিয়ালিস্টিক পাতা ও লাভ পাতার এনিমেশন */
+        .tree-leaf {
             opacity: 0;
             transform: scale(0);
             transform-origin: center;
-            filter: drop-shadow(0 5px 8px rgba(255, 10, 84, 0.3));
+            filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.15));
         }
 
         .bloom-leaf {
@@ -160,25 +161,25 @@
         }
 
         @keyframes popLeaf {
-            to { opacity: 1; transform: scale(1.4); }
+            to { opacity: 1; transform: scale(1.3); }
         }
 
         @keyframes leafShiver {
-            0% { transform: scale(1.4) rotate(0deg); }
-            100% { transform: scale(1.4) rotate(8deg); }
+            0% { transform: scale(1.3) rotate(0deg); }
+            100% { transform: scale(1.3) rotate(10deg); }
         }
 
-        /* সবার শেষে নিচে সুন্দর বক্সে আপনার নাম আসবে */
+        /* নিচে সুন্দর বক্সে আপনার নাম */
         .author-name {
             position: absolute;
-            bottom: 15px;
-            font-size: 18px;
+            bottom: 25px;
+            font-size: 16px;
             color: #ffffff;
             font-weight: bold;
-            background: linear-gradient(135deg, #c9184a, #ff4d6d);
+            background: linear-gradient(135deg, #006a4e, #056162);
             padding: 8px 25px;
             border-radius: 30px;
-            box-shadow: 0 6px 15px rgba(201, 24, 74, 0.4);
+            box-shadow: 0 6px 15px rgba(0, 106, 78, 0.3);
             opacity: 0;
             z-index: 30;
             transform: scale(0.8);
@@ -210,22 +211,21 @@
                 <circle cx="50" cy="50" r="45" stroke="#fff" stroke-width="2" fill="none" />
             </svg>
             
-            <!-- আপনার দেওয়া হুবহু টেক্সট -->
-            <h1>বাংলাদেশ উন্মুক্ত বিশ্ববিদ্যালয় এইচএসসি 2026<br>সবার জন্য শুভকামনা</h1>
-            <p>সবাই ভালোভাবে পরীক্ষা দিবেন</p>
+            <!-- আপনার দেয়া নতুন টেক্সটসমূহ -->
+            <h1>উন্মুক্ত বিশ্ববিদ্যালয় এইচএসসি 2026</h1>
+            <p>পরীক্ষার সবার সকলের জন্য শুভেচ্ছা সবাই সুন্দরভাবে পরীক্ষা দিবেন আশা করি সবাই এ বছর উত্তীর্ণ হবে ইনশাল্লাহ</p>
         </div>
 
         <div class="tree-wrapper">
-            <!-- একদম নতুন ও বিশাল ছড়ানো ৩ডি গাছ -->
+            <!-- গাছ এবং মাল্টিকালার পাতা -->
             <svg class="tree-svg" viewBox="0 0 200 230">
-                <!-- মোটা প্রধান কাণ্ড ও ছড়ানো ডালপালা -->
+                <!-- ডালপালা -->
                 <path class="branch main-trunk" stroke-width="10" d="M100,230 L100,120" />
                 <path class="branch left-branch" stroke-width="7" d="M100,130 Q65,85 45,65" />
                 <path class="branch right-branch" stroke-width="7" d="M100,130 Q135,85 155,65" />
                 <path class="branch left-branch" stroke-width="6" d="M100,160 Q55,130 35,110" />
                 <path class="branch right-branch" stroke-width="6" d="M100,160 Q145,130 165,110" />
                 
-                <!-- উপ-ডালপালা (গাছকে আরও বিশাল ও চওড়া করার জন্য বাড়িয়ে দেওয়া হয়েছে) -->
                 <path class="branch" stroke-width="4.5" d="M45,65 Q20,55 10,25" />
                 <path class="branch" stroke-width="4.5" d="M45,65 Q60,40 65,20" />
                 <path class="branch" stroke-width="4.5" d="M155,65 Q140,40 135,20" />
@@ -235,31 +235,27 @@
                 <path class="branch" stroke-width="3.5" d="M35,110 Q50,85 55,65" />
                 <path class="branch" stroke-width="3.5" d="M165,110 Q150,85 145,65" />
                 <path class="branch" stroke-width="3.5" d="M165,110 Q185,100 195,75" />
-                
-                <!-- মগডাল (উপরের দিকের চিকন এক্সট্রা ডাল) -->
-                <path class="branch" stroke-width="2.5" d="M65,20 Q65,5 65,0" />
-                <path class="branch" stroke-width="2.5" d="M135,20 Q135,5 135,0" />
-                <path class="branch" stroke-width="2.5" d="M10,25 Q0,20 -5,5" />
-                <path class="branch" stroke-width="2.5" d="M190,25 Q200,20 205,5" />
 
-                <!-- ঘন লাভ পাতা (SVG Hearts) - সম্পূর্ণ স্ক্রিন জুড়ে ছড়ানো -->
-                <path class="heart-leaf" fill="#d90429" d="M-5,5 C-7,0 -13,0 -13,5 C-13,10 -5,15 -5,15 C-5,15 3,10 3,5 C3,0 -3,0 -5,5 Z" style="transform-origin: -5px 8px; animation-delay: 2.6s;"/>
-                <path class="heart-leaf" fill="#ff0a54" d="M205,5 C203,0 197,0 197,5 C197,10 205,15 205,15 C205,15 213,10 213,5 C213,0 207,0 205,5 Z" style="transform-origin: 205px 8px; animation-delay: 2.7s;"/>
+                <!-- রিয়ালিস্টিক সবুজ পাতা এবং লাভ পাতা (মাল্টি কালার এড করা হয়েছে) -->
                 
-                <path class="heart-leaf" fill="#ff4d6d" d="M65,0 C63,-5 57,-5 57,0 C57,5 65,10 65,10 C65,10 73,5 73,0 C73,-5 67,-5 65,0 Z" style="transform-origin: 65px 3px; animation-delay: 3.2s;"/>
-                <path class="heart-leaf" fill="#ff758f" d="M135,0 C133,-5 127,-5 127,0 C127,5 135,10 135,10 C135,10 143,5 143,0 C143,-5 137,-5 135,0 Z" style="transform-origin: 135px 3px; animation-delay: 3.3s;"/>
-                
-                <path class="heart-leaf" fill="#c9184a" d="M10,25 C8,20 2,20 2,25 C2,30 10,35 10,35 C10,35 18,30 18,25 C18,20 12,20 10,25 Z" style="transform-origin: 10px 28px; animation-delay: 2.4s;"/>
-                <path class="heart-leaf" fill="#ff007f" d="M190,25 C188,20 182,20 182,25 C182,30 190,35 190,35 C190,35 198,30 198,25 C198,20 192,20 190,25 Z" style="transform-origin: 190px 28px; animation-delay: 2.5s;"/>
-                
-                <path class="heart-leaf" fill="#ffb703" d="M5,75 C3,70 -3,70 -3,75 C-3,80 5,85 5,85 C5,85 13,80 13,75 C13,70 7,70 5,75 Z" style="transform-origin: 5px 78px; animation-delay: 2.0s;"/>
-                <path class="heart-leaf" fill="#fb8500" d="M195,75 C193,70 187,70 187,75 C187,80 195,85 195,85 C195,85 203,80 203,75 C203,70 197,70 195,75 Z" style="transform-origin: 195px 78px; animation-delay: 2.1s;"/>
+                <!-- গাঢ় সবুজ রিয়ালিস্টিক পাতা -->
+                <path class="tree-leaf" fill="#1b4332" d="M-5,5 Q-15,5 -5,-5 Q5,5 -5,5 Z" style="transform: translate(-5px, 5px) rotate(45deg); transform-origin: -5px 5px; animation-delay: 2.2s;"/>
+                <path class="tree-leaf" fill="#2d6a4f" d="M65,0 Q55,0 65,-10 Q75,0 65,0 Z" style="transform: translate(65px, 0px) rotate(-15deg); transform-origin: 65px 0px; animation-delay: 2.5s;"/>
+                <path class="tree-leaf" fill="#1b4332" d="M135,0 Q125,0 135,-10 Q145,0 135,0 Z" style="transform: translate(135px, 0px) rotate(20deg); transform-origin: 135px 0px; animation-delay: 2.8s;"/>
+                <path class="tree-leaf" fill="#2d6a4f" d="M205,5 Q195,5 205,-5 Q215,5 205,5 Z" style="transform: translate(205px, 5px) rotate(-45deg); transform-origin: 205px 5px; animation-delay: 2.1s;"/>
 
-                <path class="heart-leaf" fill="#ff5c8a" d="M35,110 C33,105 27,105 27,110 C27,115 35,120 35,120 C35,120 43,115 43,110 C43,105 37,105 35,110 Z" style="transform-origin: 35px 113px; animation-delay: 1.6s;"/>
-                <path class="heart-leaf" fill="#ea698b" d="M165,110 C163,105 157,105 157,110 C157,115 165,120 165,120 C165,120 173,115 173,110 C173,105 167,105 165,110 Z" style="transform-origin: 165px 113px; animation-delay: 1.8s;"/>
-                
-                <path class="heart-leaf" fill="#ff0a54" d="M55,65 C53,60 47,60 47,65 C47,70 55,75 55,75 C55,75 63,70 63,65 C63,60 57,60 55,65 Z" style="transform-origin: 55px 68px; animation-delay: 2.2s;"/>
-                <path class="heart-leaf" fill="#d90429" d="M145,65 C143,60 137,60 137,65 C137,70 145,75 145,75 C145,75 153,70 153,65 C153,60 147,60 145,65 Z" style="transform-origin: 145px 68px; animation-delay: 2.3s;"/>
+                <!-- হালকা সবুজ ও টিয়া পাতা (রিয়ালিস্টিক ফিল আনতে) -->
+                <path class="tree-leaf" fill="#52b788" d="M10,25 Q0,25 10,15 Q20,25 10,25 Z" style="transform: translate(10px, 25px) rotate(30deg); transform-origin: 10px 25px; animation-delay: 3.0s;"/>
+                <path class="tree-leaf" fill="#74c69d" d="M190,25 Q180,25 190,15 Q200,25 190,25 Z" style="transform: translate(190px, 25px) rotate(-30deg); transform-origin: 190px 25px; animation-delay: 3.1s;"/>
+                <path class="tree-leaf" fill="#52b788" d="M35,110 Q25,110 35,100 Q45,110 35,110 Z" style="transform: translate(35px, 110px) rotate(60deg); transform-origin: 35px 113px; animation-delay: 1.7s;"/>
+                <path class="tree-leaf" fill="#74c69d" d="M165,110 Q155,110 165,100 Q175,110 165,110 Z" style="transform: translate(165px, 110px) rotate(-60deg); transform-origin: 165px 113px; animation-delay: 1.9s;"/>
+
+                <!-- আকর্ষণীয় লাভ পাতা (লাল, গোলাপী, হলুদ ও অরেঞ্জ মিক্সড) -->
+                <path class="tree-leaf" fill="#d90429" d="M5,75 C3,70 -3,70 -3,75 C-3,80 5,85 5,85 C5,85 13,80 13,75 C13,70 7,70 5,75 Z" style="transform-origin: 5px 78px; animation-delay: 2.4s;"/>
+                <path class="tree-leaf" fill="#ff0a54" d="M195,75 C193,70 187,70 187,75 C187,80 195,85 195,85 C195,85 203,80 203,75 C203,70 197,70 195,75 Z" style="transform-origin: 195px 78px; animation-delay: 2.6s;"/>
+                <path class="tree-leaf" fill="#ffb703" d="M55,65 C53,60 47,60 47,65 C47,70 55,75 55,75 C55,75 63,70 63,65 C63,60 57,60 55,65 Z" style="transform-origin: 55px 68px; animation-delay: 3.3s;"/>
+                <path class="tree-leaf" fill="#fb8500" d="M145,65 C143,60 137,60 137,65 C137,70 145,75 145,75 C145,75 153,70 153,65 C153,60 147,60 145,65 Z" style="transform-origin: 145px 68px; animation-delay: 3.5s;"/>
+                <path class="tree-leaf" fill="#ff4d6d" d="M100,90 C98,85 92,85 92,90 C92,95 100,100 100,100 C100,100 108,95 108,90 C108,85 102,85 100,90 Z" style="transform-origin: 100px 93px; animation-delay: 3.6s;"/>
             </svg>
 
             <!-- সবার শেষে লোড হওয়া আপনার সুন্দর নাম বক্স -->
@@ -273,7 +269,7 @@
         const headerBox = document.getElementById('header-box');
         const authorBox = document.getElementById('author-box');
         const branches = document.querySelectorAll('.branch');
-        const leaves = document.querySelectorAll('.heart-leaf');
+        const leaves = document.querySelectorAll('.tree-leaf');
 
         heartBtn.addEventListener('click', () => {
             // ১. লাভ বাটন সরিয়ে ফুল স্টেজ চালু
