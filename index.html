@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HSC 2026 Wishes</title>
+    
+    <!-- মেসেঞ্জারে শেয়ার করলে যাতে লিঙ্ক এর জায়গায় লাভ আইকন ও নাম দেখায় -->
+    <meta property="og:title" content="❤️ Best Wishes for HSC 2026 ❤️">
+    <meta property="og:description" content="Click to see a special wish from Md. Asif Hossain">
+    
     <style>
         * {
             margin: 0;
@@ -12,143 +17,211 @@
         }
 
         body {
-            background-color: #f7f9fc;
+            background: radial-gradient(circle, #ffe3ec 0%, #fbc4d6 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             overflow: hidden;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Arial Rounded MT Bold', 'Helvetica', sans-serif;
         }
 
-        /* শুরুর হার্ট বাটন */
-        #heart-trigger {
-            font-size: 80px;
+        /* প্রারম্ভিক লাভ আইকন বাটন */
+        #heart-btn {
+            font-size: 100px;
             cursor: pointer;
-            transition: transform 0.3s ease;
-            animation: pulse 1.5s infinite;
             user-select: none;
+            filter: drop-shadow(0 10px 15px rgba(255, 77, 109, 0.4));
+            animation: heartbeat 1.2s infinite ease-in-out;
+            transition: transform 0.3s;
         }
 
-        @keyframes pulse {
+        @keyframes heartbeat {
             0% { transform: scale(1); }
-            50% { transform: scale(1.15); }
-            100% { transform: scale(1); }
+            30% { transform: scale(1.15); }
+            60% { transform: scale(1); }
         }
 
-        /* কন্টেইনার (শুরুতে লুকানো থাকবে) */
-        #container {
+        /* মূল অ্যানিমেশন স্ক্রিন (শুরুতে হাইড থাকবে) */
+        #main-stage {
             display: none;
-            position: relative;
             width: 100%;
             height: 100vh;
-            justify-content: center;
-            align-items: flex-end;
-            padding-bottom: 50px;
+            position: relative;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 20px;
         }
 
-        /* শুভেচ্ছা টেক্সট */
-        .wishes-text {
-            position: absolute;
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
+        /* রঙিন ও স্পষ্ট টেক্সট এরিয়া */
+        .text-container {
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: #d63031;
             opacity: 0;
-            white-space: nowrap;
+            transform: translateY(-20px);
+            z-index: 10;
         }
 
-        .show-text {
-            animation: fadeInText 2s forwards 2s;
+        .show-wishes {
+            animation: fadeInText 1.5s forwards 2.5s ease-out;
+        }
+
+        .text-container h1 {
+            color: #d63031;
+            font-size: 28px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 8px;
+        }
+
+        .text-container p {
+            color: #4a2c11;
+            font-size: 18px;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 6px 15px;
+            border-radius: 20px;
+            display: inline-block;
         }
 
         @keyframes fadeInText {
-            to { opacity: 1; }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        /* গাছ এবং পাতা তৈরির জন্য ক্যানভাস */
-        canvas {
-            display: block;
-            max-width: 100%;
-            max-height: 80vh;
+        /* মোবাইল ফ্রেন্ডলি ইন্টারঅ্যাক্টিভ লাভ ট্রি */
+        .tree-wrapper {
+            width: 100%;
+            max-width: 400px;
+            height: 65vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            position: relative;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* ডালপালার রঙিন অ্যানিমেশন */
+        .branch {
+            stroke: #5c3d2e;
+            stroke-linecap: round;
+            fill: none;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+        }
+
+        .grow-branch {
+            animation: draw 2.5s forwards ease-in-out;
+        }
+
+        @keyframes draw {
+            to { stroke-dashoffset: 0; }
+        }
+
+        /* লাভ পাতার রঙিন অ্যানিমেশন */
+        .heart-leaf {
+            fill: #ff4d6d;
+            opacity: 0;
+            transform: scale(0);
+            transform-origin: center;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        /* বিভিন্ন পাতার জন্য ভিন্ন রঙের বৈচিত্র্য */
+        .heart-leaf:nth-child(even) {
+            fill: #ff758f;
+        }
+        .heart-leaf:nth-child(3n) {
+            fill: #ff0a54;
+        }
+
+        .bloom-leaf {
+            animation: popIn 1s forwards ease-out;
+        }
+
+        @keyframes popIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- শুরুতে শুধু এই হার্টটি দেখাবে -->
-    <div id="heart-trigger">❤️</div>
+    <!-- ১. শুধুমাত্র লাভ আইকন বাটন -->
+    <div id="heart-btn">❤️</div>
 
-    <!-- ক্লিক করার পর এই অংশটি চালু হবে -->
-    <div id="container">
-        <div class="wishes-text" id="wishes">
-            <h2>HSC 2026 সবার প্রতি শুভকামনা</h2>
+    <!-- ২. মূল কালারফুল স্টেজ -->
+    <div id="main-stage">
+        <div class="text-container" id="wishes-box">
+            <h1>HSC 2026 সবার প্রতি শুভকামনা</h1>
+            <p>ইতি: Md. Asif Hossain</p>
         </div>
-        <canvas id="treeCanvas"></canvas>
+
+        <div class="tree-wrapper">
+            <!-- রেসপন্সিভ ভেক্টর গাছ -->
+            <svg viewBox="0 0 200 200">
+                <!-- মূল কাণ্ড ও ডালপালা -->
+                <path class="branch" stroke-width="6" d="M100,200 L100,140" />
+                <path class="branch" stroke-width="4.5" d="M100,140 Q85,110 70,95" />
+                <path class="branch" stroke-width="4.5" d="M100,140 Q115,115 130,95" />
+                <path class="branch" stroke-width="3" d="M70,95 Q55,85 45,65" />
+                <path class="branch" stroke-width="3" d="M70,95 Q75,75 80,55" />
+                <path class="branch" stroke-width="3" d="M130,95 Q125,75 120,55" />
+                <path class="branch" stroke-width="3" d="M130,95 Q145,85 155,65" />
+                <path class="branch" stroke-width="2" d="M45,65 Q35,60 30,45" />
+                <path class="branch" stroke-width="2" d="M45,65 Q50,50 55,40" />
+                <path class="branch" stroke-width="2" d="M155,65 Q150,50 145,40" />
+                <path class="branch" stroke-width="2" d="M155,65 Q165,60 170,45" />
+
+                <!-- ডালপালার মাথায় লাভ আকৃতির পাতাসমূহ (SVG Heart Path) -->
+                <!-- ডাঁটা ও ওপরের অংশ ঠিক রেখে বসানো -->
+                <path class="heart-leaf" d="M30,45 C28,40 22,40 22,45 C22,50 30,55 30,55 C30,55 38,50 38,45 C38,40 32,40 30,45 Z" style="transform-origin: 30px 48px; animation-delay: 1.8s;"/>
+                <path class="heart-leaf" d="M55,40 C53,35 47,35 47,40 C47,45 55,50 55,50 C55,50 63,45 63,40 C63,35 57,35 55,40 Z" style="transform-origin: 55px 43px; animation-delay: 2.0s;"/>
+                <path class="heart-leaf" d="M80,55 C78,50 72,50 72,55 C72,60 80,65 80,65 C80,65 88,60 88,55 C88,50 82,50 80,55 Z" style="transform-origin: 80px 58px; animation-delay: 1.6s;"/>
+                <path class="heart-leaf" d="M120,55 C118,50 112,50 112,55 C112,60 120,65 120,65 C120,65 128,60 128,55 C128,50 122,50 120,55 Z" style="transform-origin: 120px 58px; animation-delay: 1.7s;"/>
+                <path class="heart-leaf" d="M145,40 C143,35 137,35 137,40 C137,45 145,50 145,50 C145,50 153,45 153,40 C153,35 147,35 145,40 Z" style="transform-origin: 145px 43px; animation-delay: 1.9s;"/>
+                <path class="heart-leaf" d="M170,45 C168,40 162,40 162,45 C162,50 170,55 170,55 C170,55 178,50 178,45 C178,40 172,40 170,45 Z" style="transform-origin: 170px 48px; animation-delay: 2.1s;"/>
+                
+                <!-- মাঝের অতিরিক্ত কিছু রঙিন পাতা -->
+                <path class="heart-leaf" d="M100,105 C98,100 92,100 92,105 C92,110 100,115 100,115 C100,115 108,110 108,105 C108,100 102,100 100,105 Z" style="transform-origin: 100px 108px; animation-delay: 1.2s;"/>
+                <path class="heart-leaf" d="M70,80 C68,75 62,75 62,80 C62,85 70,90 70,90 C70,90 78,85 78,80 C78,75 72,75 70,80 Z" style="transform-origin: 70px 83px; animation-delay: 1.4s;"/>
+                <path class="heart-leaf" d="M130,80 C128,75 122,75 122,80 C122,85 130,90 130,90 C130,90 138,85 138,80 C138,75 132,75 130,80 Z" style="transform-origin: 130px 83px; animation-delay: 1.5s;"/>
+            </svg>
+        </div>
     </div>
 
     <script>
-        const heartTrigger = document.getElementById('heart-trigger');
-        const container = document.getElementById('container');
-        const wishesText = document.getElementById('wishes');
-        const canvas = document.getElementById('treeCanvas');
-        const ctx = canvas.getContext('2d');
+        const heartBtn = document.getElementById('heart-btn');
+        const mainStage = document.getElementById('main-stage');
+        const wishesBox = document.getElementById('wishes-box');
+        const branches = document.querySelectorAll('.branch');
+        const leaves = document.querySelectorAll('.heart-leaf');
 
-        // স্ক্রিন সাইজ অনুযায়ী ক্যানভাস সেট করা
-        canvas.width = 600;
-        canvas.height = 600;
-
-        heartTrigger.addEventListener('click', () => {
-            // হার্ট বাটন লুকিয়ে মূল কন্টেইনার দেখানো
-            heartTrigger.style.display = 'none';
-            container.style.display = 'flex';
-            wishesText.classList.add('show-text');
+        heartBtn.addEventListener('click', () => {
+            // ১. বাটন হাইড করে মূল পেজ দেখানো
+            heartBtn.style.display = 'none';
+            mainStage.style.display = 'flex';
             
-            // গাছ আঁকার অ্যানিমেশন শুরু
-            startTreeAnimation();
+            // ২. টেক্সট এরিয়া অ্যানিমেশন অ্যাক্টিভেট করা
+            wishesBox.classList.add('show-wishes');
+
+            // ৩. ডালপালা গজানোর অ্যানিমেশন শুরু
+            branches.forEach(branch => {
+                branch.classList.add('grow-branch');
+            });
+
+            // ৪. নির্দিষ্ট সময় পর লাভ পাতা ফোটার অ্যানিমেশন শুরু
+            leaves.forEach(leaf => {
+                leaf.classList.add('bloom-leaf');
+            });
         });
-
-        // গাছ ড্রয়িং ফাংশন (প্রকৃতির মতো ডালপালা ছড়াবে)
-        function drawBranch(startX, startY, len, angle, branchWidth) {
-            ctx.beginPath();
-            ctx.save();
-            ctx.strokeStyle = "#4a2c11"; // ডালের রঙ
-            ctx.fillStyle = "#ff4d6d";   // পাতার (হার্ট) রঙ
-            ctx.lineWidth = branchWidth;
-            
-            ctx.translate(startX, startY);
-            ctx.rotate(angle * Math.PI / 180);
-            ctx.moveTo(0, 0);
-            ctx.lineTo(0, -len);
-            ctx.stroke();
-
-            // ডাল যদি খুব ছোট হয়ে যায়, তবে সেখানে হার্ট (পাতা) গজাবে
-            if (len < 10) {
-                ctx.beginPath();
-                // হার্ট শেপ আঁকা
-                ctx.moveTo(0, -len);
-                ctx.bezierCurveTo(-5, -len - 5, -10, -len + 2, 0, -len + 10);
-                ctx.bezierCurveTo(10, -len + 2, 5, -len - 5, 0, -len);
-                ctx.fill();
-                ctx.restore();
-                return;
-            }
-
-            // ডালপালা ছড়ানোর টাইমিং (অ্যানিমেশন ইফেক্ট দেওয়ার জন্য)
-            setTimeout(() => {
-                drawBranch(0, -len, len * 0.75, angle - 25, branchWidth * 0.7);
-                drawBranch(0, -len, len * 0.75, angle + 25, branchWidth * 0.7);
-                ctx.restore();
-            }, 50);
-        }
-
-        function startTreeAnimation() {
-            // গাছটির গোড়া ক্যানভাসের নিচ থেকে শুরু হবে
-            drawBranch(canvas.width / 2, canvas.height, 120, 0, 10);
-        }
     </script>
 </body>
 </html>
