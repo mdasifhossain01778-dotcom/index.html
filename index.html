@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSC 2026 Wishes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f9fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* শুরুর হার্ট বাটন */
+        #heart-trigger {
+            font-size: 80px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            animation: pulse 1.5s infinite;
+            user-select: none;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        /* কন্টেইনার (শুরুতে লুকানো থাকবে) */
+        #container {
+            display: none;
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 50px;
+        }
+
+        /* শুভেচ্ছা টেক্সট */
+        .wishes-text {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #d63031;
+            opacity: 0;
+            white-space: nowrap;
+        }
+
+        .show-text {
+            animation: fadeInText 2s forwards 2s;
+        }
+
+        @keyframes fadeInText {
+            to { opacity: 1; }
+        }
+
+        /* গাছ এবং পাতা তৈরির জন্য ক্যানভাস */
+        canvas {
+            display: block;
+            max-width: 100%;
+            max-height: 80vh;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- শুরুতে শুধু এই হার্টটি দেখাবে -->
+    <div id="heart-trigger">❤️</div>
+
+    <!-- ক্লিক করার পর এই অংশটি চালু হবে -->
+    <div id="container">
+        <div class="wishes-text" id="wishes">
+            <h2>HSC 2026 সবার প্রতি শুভকামনা</h2>
+        </div>
+        <canvas id="treeCanvas"></canvas>
+    </div>
+
+    <script>
+        const heartTrigger = document.getElementById('heart-trigger');
+        const container = document.getElementById('container');
+        const wishesText = document.getElementById('wishes');
+        const canvas = document.getElementById('treeCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // স্ক্রিন সাইজ অনুযায়ী ক্যানভাস সেট করা
+        canvas.width = 600;
+        canvas.height = 600;
+
+        heartTrigger.addEventListener('click', () => {
+            // হার্ট বাটন লুকিয়ে মূল কন্টেইনার দেখানো
+            heartTrigger.style.display = 'none';
+            container.style.display = 'flex';
+            wishesText.classList.add('show-text');
+            
+            // গাছ আঁকার অ্যানিমেশন শুরু
+            startTreeAnimation();
+        });
+
+        // গাছ ড্রয়িং ফাংশন (প্রকৃতির মতো ডালপালা ছড়াবে)
+        function drawBranch(startX, startY, len, angle, branchWidth) {
+            ctx.beginPath();
+            ctx.save();
+            ctx.strokeStyle = "#4a2c11"; // ডালের রঙ
+            ctx.fillStyle = "#ff4d6d";   // পাতার (হার্ট) রঙ
+            ctx.lineWidth = branchWidth;
+            
+            ctx.translate(startX, startY);
+            ctx.rotate(angle * Math.PI / 180);
+            ctx.moveTo(0, 0);
+            ctx.lineTo(0, -len);
+            ctx.stroke();
+
+            // ডাল যদি খুব ছোট হয়ে যায়, তবে সেখানে হার্ট (পাতা) গজাবে
+            if (len < 10) {
+                ctx.beginPath();
+                // হার্ট শেপ আঁকা
+                ctx.moveTo(0, -len);
+                ctx.bezierCurveTo(-5, -len - 5, -10, -len + 2, 0, -len + 10);
+                ctx.bezierCurveTo(10, -len + 2, 5, -len - 5, 0, -len);
+                ctx.fill();
+                ctx.restore();
+                return;
+            }
+
+            // ডালপালা ছড়ানোর টাইমিং (অ্যানিমেশন ইফেক্ট দেওয়ার জন্য)
+            setTimeout(() => {
+                drawBranch(0, -len, len * 0.75, angle - 25, branchWidth * 0.7);
+                drawBranch(0, -len, len * 0.75, angle + 25, branchWidth * 0.7);
+                ctx.restore();
+            }, 50);
+        }
+
+        function startTreeAnimation() {
+            // গাছটির গোড়া ক্যানভাসের নিচ থেকে শুরু হবে
+            drawBranch(canvas.width / 2, canvas.height, 120, 0, 10);
+        }
+    </script>
+</body>
+</html>
