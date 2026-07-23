@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HSC 2026 Wishes</title>
+    <title>❤️</title>
     
-    <!-- মেসেঞ্জারে শেয়ার করলে যাতে লিঙ্ক এর জায়গায় লাভ আইকন ও নাম দেখায় -->
-    <meta property="og:title" content="❤️ Best Wishes for HSC 2026 ❤️">
-    <meta property="og:description" content="Click to see a special wish from Md. Asif Hossain">
+    <!-- মেসেঞ্জারে শেয়ার করলে যাতে কোনো লেখা না গিয়ে শুধু হার্ট আইকন দেখায় -->
+    <meta property="og:title" content="❤️">
+    <meta property="og:description" content=" ">
     
     <style>
         * {
@@ -17,7 +17,7 @@
         }
 
         body {
-            background: radial-gradient(circle, #ffe3ec 0%, #fbc4d6 100%);
+            background: linear-gradient(135deg, #ffe5ec 0%, #ffc2d1 50%, #ffb3c6 100%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,23 +26,24 @@
             font-family: 'Arial Rounded MT Bold', 'Helvetica', sans-serif;
         }
 
-        /* প্রারম্ভিক লাভ আইকন বাটন */
+        /* কাঁপতে থাকা বড় হার্ট বাটন */
         #heart-btn {
-            font-size: 100px;
+            font-size: 130px;
             cursor: pointer;
             user-select: none;
-            filter: drop-shadow(0 10px 15px rgba(255, 77, 109, 0.4));
-            animation: heartbeat 1.2s infinite ease-in-out;
-            transition: transform 0.3s;
+            filter: drop-shadow(0 15px 25px rgba(255, 77, 109, 0.6));
+            animation: heartbeat 1s infinite cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         @keyframes heartbeat {
             0% { transform: scale(1); }
-            30% { transform: scale(1.15); }
-            60% { transform: scale(1); }
+            20% { transform: scale(1.25); }
+            40% { transform: scale(1.05); }
+            60% { transform: scale(1.2); }
+            100% { transform: scale(1); }
         }
 
-        /* মূল অ্যানিমেশন স্ক্রিন (শুরুতে হাইড থাকবে) */
+        /* মূল অ্যানিমেশন স্টেজ */
         #main-stage {
             display: none;
             width: 100%;
@@ -51,173 +52,226 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            padding: 40px 20px;
+            padding: 20px;
         }
 
-        /* রঙিন ও স্পষ্ট টেক্সট এরিয়া */
-        .text-container {
+        /* লোগো ও শুভেচ্ছা বার্তার কন্টেইনার */
+        .header-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            opacity: 0;
-            transform: translateY(-20px);
+            margin-top: 25px;
             z-index: 10;
+            opacity: 0;
+            transform: translateY(-30px);
         }
 
-        .show-wishes {
-            animation: fadeInText 1.5s forwards 2.5s ease-out;
+        .show-header {
+            animation: dropDown 1.5s forwards 3.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .text-container h1 {
-            color: #d63031;
-            font-size: 28px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 8px;
+        /* বাংলাদেশ উন্মুক্ত বিশ্ববিদ্যালয় (BOU) লোগো স্টাইল */
+        .bou-logo {
+            width: 75px;
+            height: 75px;
+            margin-bottom: 12px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
         }
 
-        .text-container p {
-            color: #4a2c11;
-            font-size: 18px;
-            font-weight: bold;
-            background: rgba(255, 255, 255, 0.6);
-            padding: 6px 15px;
-            border-radius: 20px;
+        .header-container h1 {
+            color: #c9184a;
+            font-size: 26px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+            line-height: 1.3;
+        }
+
+        /* নতুন সাবটেক্সট স্টাইল */
+        .exam-tag {
+            font-size: 16px;
+            color: #056162;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 4px 14px;
+            border-radius: 15px;
+            margin-top: 8px;
             display: inline-block;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
-        @keyframes fadeInText {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @keyframes dropDown {
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* মোবাইল ফ্রেন্ডলি ইন্টারঅ্যাক্টিভ লাভ ট্রি */
+        /* বিশাল রেসপন্সিভ গাছ */
         .tree-wrapper {
             width: 100%;
-            max-width: 400px;
-            height: 65vh;
+            max-width: 500px;
+            height: 72vh;
             display: flex;
             justify-content: center;
             align-items: flex-end;
             position: relative;
+            bottom: 15px;
         }
 
-        svg {
+        svg.tree-svg {
             width: 100%;
             height: 100%;
         }
 
-        /* ডালপালার রঙিন অ্যানিমেশন */
+        /* ডালপালার ড্রইং অ্যানিমেশন */
         .branch {
-            stroke: #5c3d2e;
+            stroke: #2f1a0c;
             stroke-linecap: round;
             fill: none;
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
+            stroke-dasharray: 1200;
+            stroke-dashoffset: 1200;
         }
 
         .grow-branch {
-            animation: draw 2.5s forwards ease-in-out;
+            animation: drawTree 3.8s forwards cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        @keyframes draw {
+        @keyframes drawTree {
             to { stroke-dashoffset: 0; }
         }
 
-        /* লাভ পাতার রঙিন অ্যানিমেশন */
+        /* প্রতিটি পাতার স্মুথ পপ-আপ অ্যানিমেশন */
         .heart-leaf {
-            fill: #ff4d6d;
             opacity: 0;
             transform: scale(0);
             transform-origin: center;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-        }
-
-        /* বিভিন্ন পাতার জন্য ভিন্ন রঙের বৈচিত্র্য */
-        .heart-leaf:nth-child(even) {
-            fill: #ff758f;
-        }
-        .heart-leaf:nth-child(3n) {
-            fill: #ff0a54;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
         }
 
         .bloom-leaf {
-            animation: popIn 1s forwards ease-out;
+            animation: popLeaf 1.5s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        @keyframes popIn {
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+        @keyframes popLeaf {
+            to { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* গাছের নিচে নাম বক্স */
+        .author-name {
+            position: absolute;
+            bottom: 10px;
+            font-size: 15px;
+            color: #4a2c11;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.65);
+            padding: 6px 16px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            opacity: 0;
+        }
+
+        .show-author {
+            animation: fadeIn 1.2s forwards 4.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ১. শুধুমাত্র লাভ আইকন বাটন -->
+    <!-- ১. শুধুমাত্র লাফানো লাভ আইকন বাটন -->
     <div id="heart-btn">❤️</div>
 
-    <!-- ২. মূল কালারফুল স্টেজ -->
+    <!-- ২. মূল কালারফুল ও বিশাল স্টেজ -->
     <div id="main-stage">
-        <div class="text-container" id="wishes-box">
-            <h1>HSC 2026 সবার প্রতি শুভকামনা</h1>
-            <p>ইতি: Md. Asif Hossain</p>
+        <div class="header-container" id="header-box">
+            <!-- বাউবি (BOU) ভেক্টর লোগো (লাল ও সবুজ বৃত্তাকার লোগো) -->
+            <svg class="bou-logo" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="46" fill="#006a4e" />
+                <circle cx="50" cy="50" r="32" fill="#f42a41" />
+                <circle cx="50" cy="50" r="18" fill="#006a4e" />
+                <circle cx="50" cy="50" r="6" fill="#fff" />
+                <!-- বাইরের বর্ডার রিং -->
+                <circle cx="50" cy="50" r="45" stroke="#fff" stroke-width="2" fill="none" />
+            </svg>
+            
+            <h1>HSC 2026<br>সবার প্রতি শুভকামনা</h1>
+            <!-- নতুন অ্যাড হওয়া টেক্সট -->
+            <div class="exam-tag">HSC 2026 final exam</div>
         </div>
 
         <div class="tree-wrapper">
-            <!-- রেসপন্সিভ ভেক্টর গাছ -->
-            <svg viewBox="0 0 200 200">
-                <!-- মূল কাণ্ড ও ডালপালা -->
-                <path class="branch" stroke-width="6" d="M100,200 L100,140" />
-                <path class="branch" stroke-width="4.5" d="M100,140 Q85,110 70,95" />
-                <path class="branch" stroke-width="4.5" d="M100,140 Q115,115 130,95" />
-                <path class="branch" stroke-width="3" d="M70,95 Q55,85 45,65" />
-                <path class="branch" stroke-width="3" d="M70,95 Q75,75 80,55" />
-                <path class="branch" stroke-width="3" d="M130,95 Q125,75 120,55" />
-                <path class="branch" stroke-width="3" d="M130,95 Q145,85 155,65" />
-                <path class="branch" stroke-width="2" d="M45,65 Q35,60 30,45" />
-                <path class="branch" stroke-width="2" d="M45,65 Q50,50 55,40" />
-                <path class="branch" stroke-width="2" d="M155,65 Q150,50 145,40" />
-                <path class="branch" stroke-width="2" d="M155,65 Q165,60 170,45" />
-
-                <!-- ডালপালার মাথায় লাভ আকৃতির পাতাসমূহ (SVG Heart Path) -->
-                <!-- ডাঁটা ও ওপরের অংশ ঠিক রেখে বসানো -->
-                <path class="heart-leaf" d="M30,45 C28,40 22,40 22,45 C22,50 30,55 30,55 C30,55 38,50 38,45 C38,40 32,40 30,45 Z" style="transform-origin: 30px 48px; animation-delay: 1.8s;"/>
-                <path class="heart-leaf" d="M55,40 C53,35 47,35 47,40 C47,45 55,50 55,50 C55,50 63,45 63,40 C63,35 57,35 55,40 Z" style="transform-origin: 55px 43px; animation-delay: 2.0s;"/>
-                <path class="heart-leaf" d="M80,55 C78,50 72,50 72,55 C72,60 80,65 80,65 C80,65 88,60 88,55 C88,50 82,50 80,55 Z" style="transform-origin: 80px 58px; animation-delay: 1.6s;"/>
-                <path class="heart-leaf" d="M120,55 C118,50 112,50 112,55 C112,60 120,65 120,65 C120,65 128,60 128,55 C128,50 122,50 120,55 Z" style="transform-origin: 120px 58px; animation-delay: 1.7s;"/>
-                <path class="heart-leaf" d="M145,40 C143,35 137,35 137,40 C137,45 145,50 145,50 C145,50 153,45 153,40 C153,35 147,35 145,40 Z" style="transform-origin: 145px 43px; animation-delay: 1.9s;"/>
-                <path class="heart-leaf" d="M170,45 C168,40 162,40 162,45 C162,50 170,55 170,55 C170,55 178,50 178,45 C178,40 172,40 170,45 Z" style="transform-origin: 170px 48px; animation-delay: 2.1s;"/>
+            <!-- বিশাল ও ঘন রঙিন SVG গাছ -->
+            <svg class="tree-svg" viewBox="0 0 200 230">
+                <!-- মূল মোটা কাণ্ড ও ছড়ানো ডালপালা -->
+                <path class="branch" stroke-width="8.5" d="M100,230 L100,130" />
+                <path class="branch" stroke-width="5.5" d="M100,140 Q75,100 60,80" />
+                <path class="branch" stroke-width="5.5" d="M100,140 Q125,100 140,80" />
+                <path class="branch" stroke-width="4.5" d="M100,170 Q70,145 50,130" />
+                <path class="branch" stroke-width="4.5" d="M100,170 Q130,145 150,130" />
                 
-                <!-- মাঝের অতিরিক্ত কিছু রঙিন পাতা -->
-                <path class="heart-leaf" d="M100,105 C98,100 92,100 92,105 C92,110 100,115 100,115 C100,115 108,110 108,105 C108,100 102,100 100,105 Z" style="transform-origin: 100px 108px; animation-delay: 1.2s;"/>
-                <path class="heart-leaf" d="M70,80 C68,75 62,75 62,80 C62,85 70,90 70,90 C70,90 78,85 78,80 C78,75 72,75 70,80 Z" style="transform-origin: 70px 83px; animation-delay: 1.4s;"/>
-                <path class="heart-leaf" d="M130,80 C128,75 122,75 122,80 C122,85 130,90 130,90 C130,90 138,85 138,80 C138,75 132,75 130,80 Z" style="transform-origin: 130px 83px; animation-delay: 1.5s;"/>
+                <!-- উপ-ডালপালা -->
+                <path class="branch" stroke-width="3.5" d="M60,80 Q40,70 30,45" />
+                <path class="branch" stroke-width="3.5" d="M60,80 Q70,55 75,35" />
+                <path class="branch" stroke-width="3.5" d="M140,80 Q130,55 125,35" />
+                <path class="branch" stroke-width="3.5" d="M140,80 Q160,70 170,45" />
+                
+                <path class="branch" stroke-width="3" d="M50,130 Q30,120 20,95" />
+                <path class="branch" stroke-width="3" d="M50,130 Q60,105 65,90" />
+                <path class="branch" stroke-width="3" d="M150,130 Q140,105 135,90" />
+                <path class="branch" stroke-width="3" d="M150,130 Q170,120 180,95" />
+                
+                <!-- বাইরের ছোট চিকন ডালপালা -->
+                <path class="branch" stroke-width="2" d="M30,45 Q20,40 15,25" />
+                <path class="branch" stroke-width="2" d="M75,35 Q75,20 75,15" />
+                <path class="branch" stroke-width="2" d="M125,35 Q125,20 125,15" />
+                <path class="branch" stroke-width="2" d="M170,45 Q180,40 185,25" />
+
+                <!-- কালারফুল লাভ পাতা কম্বিনেশন -->
+                <path class="heart-leaf" fill="#d90429" d="M15,25 C13,20 7,20 7,25 C7,30 15,35 15,35 C15,35 23,30 23,25 C23,20 17,20 15,25 Z" style="transform-origin: 15px 28px; animation-delay: 2.8s;"/>
+                <path class="heart-leaf" fill="#ff0a54" d="M185,25 C183,20 177,20 177,25 C177,30 185,35 185,35 C185,35 193,30 193,25 C193,20 187,20 185,25 Z" style="transform-origin: 185px 28px; animation-delay: 2.9s;"/>
+                <path class="heart-leaf" fill="#ff4d6d" d="M100,100 C98,95 92,95 92,100 C92,105 100,110 100,110 C100,110 108,105 108,100 C108,95 102,95 100,100 Z" style="transform-origin: 100px 103px; animation-delay: 3.4s;"/>
+                
+                <path class="heart-leaf" fill="#ff758f" d="M75,15 C73,10 67,10 67,15 C67,20 75,25 75,25 C75,25 83,20 83,15 C83,10 77,10 75,15 Z" style="transform-origin: 75px 18px; animation-delay: 3.0s;"/>
+                <path class="heart-leaf" fill="#ff85a1" d="M125,15 C123,10 117,10 117,15 C117,20 125,25 125,25 C125,25 133,20 133,15 C133,10 127,10 125,15 Z" style="transform-origin: 125px 18px; animation-delay: 3.1s;"/>
+                
+                <path class="heart-leaf" fill="#c9184a" d="M30,45 C28,40 22,40 22,45 C22,50 30,55 30,55 C30,55 38,50 38,45 C38,40 32,40 30,45 Z" style="transform-origin: 30px 48px; animation-delay: 2.4s;"/>
+                <path class="heart-leaf" fill="#ff007f" d="M170,45 C168,40 162,40 162,45 C162,50 170,55 170,55 C170,55 178,50 178,45 C178,40 172,40 170,45 Z" style="transform-origin: 170px 48px; animation-delay: 2.6s;"/>
+                
+                <path class="heart-leaf" fill="#ffb703" d="M20,95 C18,90 12,90 12,95 C12,100 20,105 20,105 C20,105 28,100 28,95 C28,90 22,90 20,95 Z" style="transform-origin: 20px 98px; animation-delay: 2.0s;"/>
+                <path class="heart-leaf" fill="#fb8500" d="M180,95 C178,90 172,90 172,95 C172,100 180,105 180,105 C180,105 188,100 188,95 C188,90 182,90 180,95 Z" style="transform-origin: 180px 98px; animation-delay: 2.2s;"/>
+
+                <path class="heart-leaf" fill="#ff5c8a" d="M65,90 C63,85 67,85 67,90 C67,95 75,100 75,100 C75,100 83,95 83,90 C83,85 77,85 75,90 Z" style="transform-origin: 75px 93px; animation-delay: 1.6s;"/>
+                <path class="heart-leaf" fill="#ea698b" d="M135,90 C133,85 127,85 127,90 C127,95 135,100 135,100 C135,100 143,95 143,90 C143,85 137,85 135,90 Z" style="transform-origin: 135px 93px; animation-delay: 1.8s;"/>
             </svg>
+
+            <!-- নিচে সুন্দর বক্সে আপনার নাম -->
+            <div class="author-name" id="author-box">Md. Asif Hossain</div>
         </div>
     </div>
 
     <script>
         const heartBtn = document.getElementById('heart-btn');
         const mainStage = document.getElementById('main-stage');
-        const wishesBox = document.getElementById('wishes-box');
+        const headerBox = document.getElementById('header-box');
+        const authorBox = document.getElementById('author-box');
         const branches = document.querySelectorAll('.branch');
         const leaves = document.querySelectorAll('.heart-leaf');
 
         heartBtn.addEventListener('click', () => {
-            // ১. বাটন হাইড করে মূল পেজ দেখানো
+            // ১. লাভ বাটন হাইড করে মূল স্টেজ ওপেন করা
             heartBtn.style.display = 'none';
             mainStage.style.display = 'flex';
             
-            // ২. টেক্সট এরিয়া অ্যানিমেশন অ্যাক্টিভেট করা
-            wishesBox.classList.add('show-wishes');
+            // ২. হেডার (লোগো+টেক্সট) এবং নামের অ্যানিমেশন ট্রিগার করা
+            headerBox.classList.add('show-header');
+            authorBox.classList.add('show-author');
 
-            // ৩. ডালপালা গজানোর অ্যানিমেশন শুরু
+            // ৩. ডালপালাগুলোর গ্রোথ শুরু করা
             branches.forEach(branch => {
                 branch.classList.add('grow-branch');
             });
 
-            // ৪. নির্দিষ্ট সময় পর লাভ পাতা ফোটার অ্যানিমেশন শুরু
+            // ৪. পাতাগুলো ফুটিয়ে তোলা
             leaves.forEach(leaf => {
                 leaf.classList.add('bloom-leaf');
             });
